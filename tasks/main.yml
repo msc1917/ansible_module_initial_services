@@ -1,0 +1,50 @@
+---
+- name: Setup SSH-Service
+  include_role: 
+    name: service_ssh
+  when: "'ssh' in services"
+
+- name: Setup DHCP-Server
+  include_role: 
+    name: service_dhcp
+  when: "'dhcp' in services"
+
+- name: Setup DNS-Server
+  include_role: 
+    name: service_dns
+  when: "'dns' in services"
+
+- name: Setup LDAP-Service
+  include_role: 
+    name: service_ldap
+  when: "'ldap' in services"
+
+- name: Setup Avahi-Service
+  include_role: 
+    name: service_avahi
+  when: "'avahi' in services"
+
+- name: Setup Samba-Service
+  include_role: 
+    name: service_samba
+  when: "'samba' in services"
+
+- name: Setup GIT
+  include_role: 
+    name: service_git
+  when: "'git' in software"
+
+- name: Setup Ansible
+  include_role: 
+    name: service_ansible
+  when: "'ansible' in software"
+
+- name: Setup apt-proxy
+  include_role: 
+    name: service_apt-proxy
+  # when: "'apt-proxy' in services"
+
+- name: Setup XRDP-Service
+  include_role: 
+    name: service_xrdp
+  when: "'xrdp' in services"

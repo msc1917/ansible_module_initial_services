@@ -1,0 +1,5 @@
+---
+dependencies:
+  - role: setenv_apt-proxy
+  - role: setenv_default-repositories
+  - role: setenv_default-software
