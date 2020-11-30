@@ -5,19 +5,26 @@
   when: "'ssh' in services"
 
 - name: Setup DHCP-Server
-  include_role: 
+  include_role:
     name: service_dhcp
-  when: "'dhcp' in services"
+  when: 
+    - "'dhcp' in services"
+    - "'all_management' in groups"
 
 - name: Setup DNS-Server
   include_role: 
     name: service_dns
-  when: "'dns' in services"
+  when: 
+    - "'dns' in services"
+    - "'all_management' in groups"
+
 
 - name: Setup LDAP-Service
   include_role: 
     name: service_ldap
-  when: "'ldap' in services"
+  when: 
+    - "'ldap' in services"
+    - "'all_management' in groups"
 
 - name: Setup Avahi-Service
   include_role: 
