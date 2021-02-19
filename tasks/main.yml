@@ -55,3 +55,8 @@
   include_role: 
     name: service_xrdp
   when: "'xrdp' in services"
+
+- name: Setup FoundryVTT
+  include_role: 
+    name: service_foundryVTT
+  when: "'foundryVTT' in software"
