@@ -18,7 +18,6 @@
     - "'dns' in services"
     - "'all_management' in groups"
 
-
 - name: Setup LDAP-Service
   include_role: 
     name: service_ldap
@@ -45,6 +44,11 @@
   include_role: 
     name: service_ansible
   when: "'ansible' in software"
+
+- name: Setup Postgres
+  include_role: 
+    name: service_db-postgres
+  when: "'postgres' in software"
 
 - name: Setup apt-proxy
   include_role: 
