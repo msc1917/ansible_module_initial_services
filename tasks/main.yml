@@ -18,6 +18,12 @@
     - "'dns' in services"
     - "'all_management' in groups"
 
+- name: Setup Certificate Authority
+  include_role: 
+    name: setenv_ssl-certificate
+  when:
+    - ssl_certificate_authority is defined
+
 - name: Setup LDAP-Service
   include_role: 
     name: service_ldap
