@@ -56,6 +56,12 @@
     name: service_db-postgres
   when: "'postgres' in software"
 
+- name: Setup Kubernetes Base-Install
+  include_role: 
+    name: service_kubernetes-install
+  when: "'kubernetes' in software"
+
+
 - name: Setup apt-proxy
   include_role: 
     name: service_apt-proxy
