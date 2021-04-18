@@ -59,7 +59,7 @@
 - name: Setup Kubernetes Base-Install
   include_role: 
     name: service_kubernetes-install
-  when: "'kubernetes' in software"
+  when: "'kubernetes' in services"
 
 
 - name: Setup apt-proxy
