@@ -72,6 +72,11 @@
     name: service_xrdp
   when: "'xrdp' in services"
 
+- name: Setup picture editing toolset
+  include_role: 
+    name: service_imagetools
+  when: "'imagetools' in software"
+
 - name: Setup FoundryVTT
   include_role: 
     name: service_foundryVTT
